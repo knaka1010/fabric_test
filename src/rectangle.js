@@ -10,6 +10,21 @@ const rect = new fabric.Rect({
     height: 100, // 高さ
 });
 
+const gridSize = 50; // グリッド間隔
+for (let i = 0; i < 800; i += gridSize) {
+    canvas.add(new fabric.Line([i, 0, i, 600], { stroke: '#ccc', selectable: false }));
+    canvas.add(new fabric.Line([0, i, 800, i], { stroke: '#ccc', selectable: false }));
+}
+
+//グリッドを吸着
+canvas.on('object:moving', function(e) {
+    const obj = e.target;
+
+    // スナップ計算
+    obj.left = Math.round(obj.left / gridSize) * gridSize;
+    obj.top = Math.round(obj.top / gridSize) * gridSize;
+});
+
 // Canvasに追加
 canvas.add(rect);
 
