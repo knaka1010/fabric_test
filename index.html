@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas Manager Example</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Canvas Manager Example</h1>
+  </header>
+  
+  <div id="toolbar">
+    <!-- ズーム操作 -->
+    <button id="zoom-in">ズームイン</button>
+    <button id="zoom-out">ズームアウト</button>
+
+    <!-- グリッド表示 -->
+    <button id="toggle-grid">グリッド表示切り替え</button>
+
+    <!-- 背景色変更 -->
+    <label for="background-color">背景色: </label>
+    <input type="color" id="background-color" value="#ffffff">
+
+    <!-- キャンバスクリア -->
+    <button id="clear-canvas">キャンバスをクリア</button>
+  </div>
+
+  <div id="canvas-container">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fabric@4.6.0/dist/fabric.min.js"></script>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
